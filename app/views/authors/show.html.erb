@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @author.name %> <%= @author.surname %></h2>
+
+<%= @author.notes %>
+
+<% if !@author.entries.empty? %>
+<ul class="entries">
+	<% @author.entries.each do |entry| %>
+	<li><%= link_to entry.title, entry_path %></li>
+	<% end %>
+</ul>
+<% end %>
+
+<p><%= link_to 'Edit', edit_author_path(@author) %> |
+<%= link_to 'Back', authors_path %></p>

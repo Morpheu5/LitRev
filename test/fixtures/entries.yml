@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  review_date: 2012-06-16
+  review: MyText
+  rating: 
+
+two:
+  title: MyString
+  review_date: 2012-06-16
+  review: MyText
+  rating: 

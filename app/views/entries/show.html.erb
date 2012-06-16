@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @entry.title %></h2>
+
+<%
+authors = Array.new
+@entry.authors.each do |author|
+	authors << link_to("#{author.name} #{author.surname}", author_path)
+end %>
+<%= authors.join(', ').html_safe %>
+
+<% if @entry.review_date.nil? %>
+	<p>Not yet reviewed</p>
+<% else %>
+	<p>Reviewed on <%= @entry.review_date %></p>
+<% end %>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @entry.rating %>
+</p>
+
+<%= @entry.review %>
+
+<p>
+	<strong>Tags:</strong>
+	<%
+	tags = Array.new
+	@entry.tags.each do |tag|
+		tags << tag.name
+	end %>
+	<%= tags.join(', ') %>
+</p>
+
+<p><%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %></p>
