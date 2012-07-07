@@ -2,8 +2,10 @@
 	<%= f.inputs do %>
 		<%= f.input :title %>
 		<%= f.input :review_date %>
-		<%= f.input :review %>
+		<%= f.input :review, :input_html => { :class => 'autogrow', :rows => 10 } %>
 		<%= f.input :rating %>
+		<%= f.input :tags, :as => :string, :input_html => { :value => @entry.tags_list } %>
+		<!--<%= f.input :tags %>-->
 	<% end %>
 	<%= f.actions %>
 <% end %>

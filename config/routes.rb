@@ -1,6 +1,7 @@
 LitRev::Application.routes.draw do
   resources :authors
   resources :entries
+  resources :tags
 
   get "home/index"
 

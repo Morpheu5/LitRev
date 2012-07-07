@@ -24,12 +24,9 @@ end %>
 
 <p>
 	<strong>Tags:</strong>
-	<%
-	tags = Array.new
-	@entry.tags.each do |tag|
-		tags << tag.name
-	end %>
-	<%= tags.join(', ') %>
+	<%= @entry.tags.sort.collect do |tag|
+		link_to tag.name, tag
+	end.join(', ').html_safe %>
 </p>
 
 <p><%= link_to 'Edit', edit_entry_path(@entry) %> |
