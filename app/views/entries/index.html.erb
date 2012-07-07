@@ -3,8 +3,8 @@
 <table>
   <tr>
     <th>Title</th>
+	<th>Author(s)</th>
     <th>Review date</th>
-    <th>Review</th>
     <th>Rating</th>
     <th></th>
     <th></th>
@@ -14,8 +14,8 @@
 <% @entries.each do |entry| %>
   <tr>
     <td><%= entry.title %></td>
+	<td>AUTHOR(S) HERE</td>
     <td><%= entry.review_date %></td>
-    <td><%= entry.review %></td>
     <td><%= entry.rating %></td>
     <td><%= link_to 'Show', entry %></td>
     <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
